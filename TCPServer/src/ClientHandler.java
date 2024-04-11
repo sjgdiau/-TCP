@@ -96,7 +96,7 @@ class ClientHandler implements Runnable {
                             } catch (NumberFormatException ex) {
                                 System.out.println("输入的不是有效的整数：" + parts[1]);
                             }
-                            if (wdr<user.getSum()&&wdr!=0){
+                            if (wdr>0&&wdr<user.getSum()){
                                 Withdraw add=new Withdraw(user.getUserId(), -wdr);
                                 if (add.complete) {
                                     response = "525 OK!";
